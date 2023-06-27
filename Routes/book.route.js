@@ -25,6 +25,16 @@ bookRouter.get("/:id",async(req,res)=>{
         res.send("bad Request")
     }
 })
+bookRouter.get("/user/:id",async(req,res)=>{
+    const id = req.params.id
+    try {
+        const book = await bookModel.findById({userId:id})
+        res.send(book)
+    } catch (error) {
+        console.log(error)
+        res.send("bad Request")
+    }
+})
 
   bookRouter.get("/",async(req,res)=>{
     try {
