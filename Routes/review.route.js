@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const {reviewModel} = require("../Model/review.Model")
+const {reviewModel} = require("../Model/review.model")
 const express = require("express")
 const reviewRouter = express.Router()
 
