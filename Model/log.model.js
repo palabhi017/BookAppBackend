@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 
 const logSchema = mongoose.Schema({
    
-    productId: String, 
+    id: String, 
     timestamp: { type: Date, default: Date.now },
     previousData: {
       title: String,
