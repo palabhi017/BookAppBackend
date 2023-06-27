@@ -1,4 +1,4 @@
-const {ratingModel} = require("../Model/review.model")
+const {ratingModel} = require("../Model/rating.model")
 const express = require("express")
 const ratingRouter = express.Router()
 

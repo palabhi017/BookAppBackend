@@ -8,6 +8,7 @@ const {userRouter}  = require("./Routes/Auth.route")
 const {bookRouter} =  require("./Routes/book.route")
 const {libraryRouter} =  require("./Routes/library.route")
 const { reviewRouter } = require("./Routes/review.route")
+const { ratingRouter } = require("./Routes/rating.route")
 
 
 const connectDB = async () => {
