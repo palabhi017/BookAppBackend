@@ -1,5 +1,5 @@
 const {bookModel} = require("../Model/book.model")
-
+const {logModel} = require("../Model/log.model")
 
 const loggerMiddleware = async (req, res, next) => {
     try {
@@ -9,7 +9,7 @@ const loggerMiddleware = async (req, res, next) => {
       
       next();
      
-    const logEntry = new Log({
+    const logEntry = new logModel({
        
         id,
         previousData,
