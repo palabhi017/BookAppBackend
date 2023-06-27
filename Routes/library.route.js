@@ -8,7 +8,7 @@ const libraryRouter = express.Router()
 libraryRouter.get("/:id",async(req,res)=>{
     try {
      const id = req.params.id
-        const book = await libraryModel.find({userID:id})
+        const book = await libraryModel.find({userId:id})
     res.send(book)
 
 } catch (error) {
@@ -23,7 +23,7 @@ libraryRouter.post("/add",async(req,res)=>{
     try {
        await libraryModel.insertMany(item)
 
-    res.send("Item added successfully")
+    res.send("book added successfully")
 
 } catch (error) {
         res.status(400).json({"err":"bad request"})
