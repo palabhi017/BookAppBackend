@@ -1,7 +1,8 @@
 const {bookModel} = require("../Model/book.model")
 const express = require("express")
 const jwt = require('jsonwebtoken');
-const {authenticate} = require("../Middleware/auth.middleware")
+const {authenticate} = require("../Middleware/auth.middleware");
+const loggerMiddleware = require("../Middleware/logger.middleware");
 const bookRouter = express.Router()
 
 
@@ -64,12 +65,7 @@ bookRouter.get("/user/:id",async(req,res)=>{
    
 })
 
-
-
-
-
-
-bookRouter.patch("/update/:id", async(req,res)=>{
+bookRouter.patch("/update/:id", loggerMiddleware,async(req,res)=>{
     const id = req.params.id
     const data = req.body
 try {
