@@ -7,6 +7,7 @@ const app = express()
 const {userRouter}  = require("./Routes/Auth.route")
 const {bookRouter} =  require("./Routes/book.route")
 const {libraryRouter} =  require("./Routes/library.route")
+const { reviewRouter } = require("./Routes/review.route")
 
 
 const connectDB = async () => {
@@ -24,7 +25,7 @@ app.use(express.json())
 app.use("/user",userRouter)
 app.use("/book",bookRouter)
 app.use("/library",libraryRouter)
-app.use("/review",reviewRouter)
+app.use("/review",reviewRouter) 
 
 
 
