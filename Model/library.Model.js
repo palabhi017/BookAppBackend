@@ -5,8 +5,7 @@ const librarySchema = mongoose.Schema({
     image: String,
     title: String,
     category: String,
-    rating: Number,
-    review : [{username : String, comment : String}]
+    userId: String
    
 })
 
