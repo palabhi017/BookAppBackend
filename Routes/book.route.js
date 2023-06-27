@@ -28,7 +28,7 @@ bookRouter.get("/:id",async(req,res)=>{
 bookRouter.get("/user/:id",async(req,res)=>{
     const id = req.params.id
     try {
-        const book = await bookModel.findById({userId:id})
+        const book = await bookModel.find({userId:id})
         res.send(book)
     } catch (error) {
         console.log(error)
