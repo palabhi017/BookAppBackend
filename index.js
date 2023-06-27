@@ -9,6 +9,7 @@ const {bookRouter} =  require("./Routes/book.route")
 const {libraryRouter} =  require("./Routes/library.route")
 const { reviewRouter } = require("./Routes/review.route")
 const { ratingRouter } = require("./Routes/rating.route")
+const { logRouter } = require("./Routes/logs.route")
 
 
 const connectDB = async () => {
@@ -28,6 +29,7 @@ app.use("/book",bookRouter)
 app.use("/library",libraryRouter)
 app.use("/review",reviewRouter) 
 app.use("/rating",ratingRouter) 
+app.use("/log",logRouter) 
 
 
 
