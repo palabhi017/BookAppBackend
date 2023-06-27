@@ -26,6 +26,7 @@ app.use("/user",userRouter)
 app.use("/book",bookRouter)
 app.use("/library",libraryRouter)
 app.use("/review",reviewRouter) 
+app.use("/rating",ratingRouter) 
 
 
 
