@@ -1,3 +1,4 @@
+const { authenticate } = require("../Middleware/auth.middleware")
 const {ratingModel} = require("../Model/rating.model")
 const express = require("express")
 const ratingRouter = express.Router()
@@ -20,7 +21,7 @@ ratingRouter.get("/:id",async(req,res)=>{
    
 })
 
-ratingRouter.post("/add",async(req,res)=>{
+ratingRouter.post("/add",authenticate,async(req,res)=>{
     const item = req.body
     try {
        await ratingModel.insertMany(item)

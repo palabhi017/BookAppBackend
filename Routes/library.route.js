@@ -18,7 +18,7 @@ libraryRouter.get("/:id",async(req,res)=>{
    
 })
 
-libraryRouter.post("/add",async(req,res)=>{
+libraryRouter.post("/add",authenticate,async(req,res)=>{
     const item = req.body
     try {
        await libraryModel.insertMany(item)

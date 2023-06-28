@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const {reviewModel} = require("../Model/review.model")
-const express = require("express")
+const express = require("express");
+const { authenticate } = require('../Middleware/auth.middleware');
 const reviewRouter = express.Router()
 
 reviewRouter.get("/:id",async(req,res)=>{
@@ -16,7 +17,7 @@ reviewRouter.get("/:id",async(req,res)=>{
    
 })
 
-reviewRouter.post("/add",async(req,res)=>{
+reviewRouter.post("/add",authenticate,async(req,res)=>{
     const item = req.body
     try {
        await reviewModel.insertMany(item)
