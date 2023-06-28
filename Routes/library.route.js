@@ -32,39 +32,20 @@ libraryRouter.post("/add",authenticate,async(req,res)=>{
    
 })
 
-libraryRouter.patch("/update/:id", async(req,res)=>{
-    const id = req.params.id
-    const data = req.body
-try {
-    const new_data = await libraryModel.findByIdAndUpdate({_id:id},data)
-    res.status(200).json({"massage":"Data Updated successfully"})
-} catch (error) {
-    res.status(400).json({"err":"bad request"})
-}
-   
-})
+
 
 libraryRouter.delete("/delete/:id", async(req,res)=>{
     try {
         const id = req.params.id
         const new_data = await libraryModel.findByIdAndDelete({_id:id})
-        res.status(200).json({"massage":"Data Deleted successfully"})
+        res.status(200).json({"massage":"Book Deleted successfully"})
     } catch (error) {
          res.status(400).json({"err":"bad request"})  
     }
 
 })
 
-libraryRouter.delete("/deleteall/:id", async(req,res)=>{
-    try {
-        const id = req.params.id
-        const new_data = await libraryModel.deleteMany({userID:id})
-        res.status(200).json({"massage":"Data Deleted successfully"})
-    } catch (error) {
-         res.status(400).json({"err":"bad request"})  
-    }
 
-})
 
 
 
